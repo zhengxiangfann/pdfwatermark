@@ -62,7 +62,8 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 
 	config := pdfcpu.NewDefaultConfiguration()
 
-	font.UserFontDir = "."
+	dir, _ := os.Getwd()
+	font.UserFontDir = dir
 	err = api.InstallFonts([]string{"wryh.ttf"})
 	if err != nil {
 		log.Fatalln("api.InstallFonts error: ", err.Error())
