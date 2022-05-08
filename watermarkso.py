@@ -46,13 +46,14 @@ WaterMark.register_dynamic_link_library()
 
 if __name__ == '__main__':
     import time
-
+    import io
 
     t1 = ts =  time.time()
     wm = WaterMark()
     with open("abc-watermark.pdf", "wb") as fw:
-        buf = wm.add_water_mask("abc.pdf", " 水印 水印 水印 ")
-        fw.write(buf)
+        buf = wm.add_water_mask("abc.pdf", " 水印 11111水印 水印 ")
+        f = io.BytesIO(buf)
+        fw.write(f.getvalue())
     print(time.time() - t1)
 
 

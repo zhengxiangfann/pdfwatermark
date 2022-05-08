@@ -51,13 +51,9 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
 	defer func() {
-		if err != nil {
-			log.Fatalln("os.Open error:", err.Error())
-		}
+		defer func() { recover() }()
 		if err = f.Close(); err != nil {
-
 			return
 		}
 	}()
@@ -112,10 +108,10 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 	wm.TextString = calcText(goText, pdfSize0.Width, pdfSize0.Height)
 	buf := new(bytes.Buffer)
 	err = api.AddWatermarks(f, buf, nil, wm, config)
+	defer func() { recover() }()
 	if err != nil {
 		fmt.Println(err)
 	}
-	log.Println("api.AddWatermarks", pagesSize)
 	ret := C.CString(base64.StdEncoding.EncodeToString(buf.Bytes()))
 	//C.free(unsafe.Pointer(ret))
 	return ret
@@ -130,8 +126,10 @@ func testWaterMark(in string, text string) []byte {
 		log.Fatalln(err)
 	}
 	defer func() {
+		defer func() {
+			recover()
+		}()
 		if err = f.Close(); err != nil {
-			log.Fatalln(err.Error())
 			return
 		}
 	}()
@@ -179,8 +177,14 @@ func testWaterMark(in string, text string) []byte {
 	wm.TextString = calcText(goText, pdfSize0.Width, pdfSize0.Height)
 	buf := new(bytes.Buffer)
 	err = api.AddWatermarks(f, buf, nil, wm, config)
+	defer func() {
+		if er := recover(); er != nil {
+			log.Println(er)
+		}
+	}()
+
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println(err.Error())
 	}
 	return buf.Bytes()
 }
