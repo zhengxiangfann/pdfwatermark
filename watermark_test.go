@@ -17,8 +17,8 @@ func Test_testWaterMark(t *testing.T) {
 		{
 			name: "test1",
 			args: args{
-				in:   "a.pdf",
-				text: " 斗罗大陆 ",
+				in:   "tmp_1651997191.pdf",
+				text: " 斗罗大陆 斗罗大陆 斗罗大陆 唐三 小舞 ",
 			},
 		}, {
 			name: "test2",

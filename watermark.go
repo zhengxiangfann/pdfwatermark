@@ -12,6 +12,7 @@ import (
 
 	"github.com/pdfcpu/pdfcpu/pkg/api"
 	"github.com/pdfcpu/pdfcpu/pkg/font"
+	logx "github.com/pdfcpu/pdfcpu/pkg/log"
 	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu"
 )
 
@@ -56,13 +57,18 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 			log.Fatalln("os.Open error:", err.Error())
 		}
 		if err = f.Close(); err != nil {
+
 			return
 		}
 	}()
 
 	config := pdfcpu.NewDefaultConfiguration()
 
-	dir, _ := os.Getwd()
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatalln("os.Getwd() error:", err.Error())
+	}
+	log.Println("os.Getwd()", dir)
 	font.UserFontDir = dir
 	err = api.InstallFonts([]string{"wryh.ttf"})
 	if err != nil {
@@ -111,7 +117,7 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 }
 
 func testWaterMark(in string, text string) []byte {
-	//logx.SetDefaultDebugLogger()
+	logx.SetDefaultDebugLogger()
 	goIn := in
 	goText := text
 	f, err := os.Open(goIn)
@@ -143,7 +149,6 @@ func testWaterMark(in string, text string) []byte {
 	if len(pagesSize) > 0 {
 		pdfSize0 = pagesSize[0]
 	}
-	calcText(goText, pdfSize0.Width, pdfSize0.Height)
 	//dx := ll.X + wm.bb.Width()/2 + float64(wm.Dx) + sin*(wm.bb.Height()/2+dy) - cos*wm.bb.Width()/2
 	//dy = ll.Y + wm.bb.Height()/2 + float64(wm.Dy) - cos*(wm.bb.Height()/2+dy) - sin*wm.bb.Width()/2
 	//pointX := pdfSize0.Width - bbWidth + bbWidth/2 + bbHeight/2*sin30 - cos30*bbWidth/2
