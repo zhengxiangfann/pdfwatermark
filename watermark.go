@@ -85,10 +85,12 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 	}
 
 	pagesSize, err := api.PageDims(f, config)
+	log.Println("api.PageDims(f, config)", pagesSize)
 	var pdfSize0 pdfcpu.Dim
 	if len(pagesSize) > 0 {
 		pdfSize0 = pagesSize[0]
 	}
+
 	//tmpStr, bbWidth, bbHeight := calcText(goText, pdfSize0.Width, pdfSize0.Height)
 	//dx := ll.X + wm.bb.Width()/2 + float64(wm.Dx) + sin*(wm.bb.Height()/2+dy) - cos*wm.bb.Width()/2
 	//dy = ll.Y + wm.bb.Height()/2 + float64(wm.Dy) - cos*(wm.bb.Height()/2+dy) - sin*wm.bb.Width()/2
@@ -97,20 +99,23 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 	//offsetX := int(pdfSize0.Width / 2 * sin30)
 	//offsetY := int(pdfSize0.Width / 2 * cos30)
 	//one of tl,tc,tr,l,c,r,bl,bc,br.
-	wm, err := api.TextWatermark(calcText(goText, pdfSize0.Width, pdfSize0.Height),
+	wm, err := api.TextWatermark("",
 		"sc: 1.4 abs, op:.2, rot:30, pos:br, fillc: 0.5 0.5 0.5",
 		true, false, 4,
 	)
+
 	if err != nil {
 		log.Fatalln("api.TextWatermark error:", err.Error())
 	}
 	wm.FontName = "MicrosoftYaHei"
 	wm.FontSize = 8
+	wm.TextString = calcText(goText, pdfSize0.Width, pdfSize0.Height)
 	buf := new(bytes.Buffer)
 	err = api.AddWatermarks(f, buf, nil, wm, config)
 	if err != nil {
 		fmt.Println(err)
 	}
+	log.Println("api.AddWatermarks", pagesSize)
 	ret := C.CString(base64.StdEncoding.EncodeToString(buf.Bytes()))
 	//C.free(unsafe.Pointer(ret))
 	return ret
