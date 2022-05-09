@@ -24,7 +24,7 @@ func Test_testWaterMark(t *testing.T) {
 			name: "test2",
 			args: args{
 				in:   "abc.pdf",
-				text: "小舞",
+				text: "仅供投资人李武四4727查阅",
 			},
 		},
 	}

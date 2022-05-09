@@ -19,6 +19,11 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 /* Start of preamble from import "C" comments.  */
 
 
+#line 3 "watermark.go"
+
+#include <stdlib.h>
+
+#line 1 "cgo-generated-wrapper"
 
 
 /* End of preamble from import "C" comments.  */
@@ -69,6 +74,7 @@ extern "C" {
 #endif
 
 extern char* AddWaterMark(char* in, char* text);
+extern void ReleaseMemory();
 
 #ifdef __cplusplus
 }

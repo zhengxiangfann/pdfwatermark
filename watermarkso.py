@@ -41,6 +41,9 @@ class WaterMark(object):
             self._to_byte(self.watermark_text)
         ))
 
+    def free(self):
+        free = self.so.ReleaseMemory
+        free()
 
 WaterMark.register_dynamic_link_library()
 
@@ -54,6 +57,8 @@ if __name__ == '__main__':
         buf = wm.add_water_mask("abc.pdf", " 水印 11111水印 水印 ")
         f = io.BytesIO(buf)
         fw.write(f.getvalue())
+        wm.free() # 必须要调用,否则会出现内存泄露
+
     print(time.time() - t1)
 
 
