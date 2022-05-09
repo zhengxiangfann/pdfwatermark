@@ -3,3 +3,6 @@
 .idea/
 *.so
 *.pdf
+
+/__pycache__/
+*.pyc
