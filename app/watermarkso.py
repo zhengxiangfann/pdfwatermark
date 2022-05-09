@@ -1,0 +1,66 @@
+# -*- coding:utf-8 -*-
+import base64
+import ctypes
+import os.path
+
+
+class WaterMark(object):
+    so_path = ""
+    so = None
+
+    def __init__(self, pdf_path=None, watermark_text=None):
+        self.pdf_path = pdf_path
+        self.watermark_text = watermark_text
+
+    @classmethod
+    def register_dynamic_link_library(cls, so_path=None):
+        if so_path:
+            cls.so_path = so_path
+        else:
+            cls.so_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "watermark.so")
+        try:
+            cls.so = ctypes.CDLL(cls.so_path)
+        except FileExistsError as ex:
+            print(f"{ex}")
+            raise ex
+
+    def _to_byte(self, u_str):
+        if isinstance(u_str, str):
+            return u_str.encode("utf-8")
+        else:
+            return u_str
+
+    def add_water_mask(self, pdf_path=None, watermark_text=None):
+        self.pdf_path = pdf_path or self.pdf_path
+        self.watermark_text = watermark_text or self.watermark_text
+
+        AddWaterMark = self.so.AddWaterMark
+        AddWaterMark.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
+        AddWaterMark.restype = ctypes.c_char_p
+        return base64.b64decode(AddWaterMark(
+            self._to_byte(self.pdf_path),
+            self._to_byte(self.watermark_text)
+        ))
+
+    def free(self):
+        free = self.so.ReleaseMemory
+        free()
+
+WaterMark.register_dynamic_link_library()
+
+if __name__ == '__main__':
+    import time
+    import io
+
+    t1 = ts =  time.time()
+    wm = WaterMark()
+    with open("abc-watermark.pdf", "wb") as fw:
+        buf = wm.add_water_mask("abc.pdf", " 水印 11111水印 水印 ")
+        f = io.BytesIO(buf)
+        fw.write(f.getvalue())
+        wm.free() # 必须要调用,否则会出现内存泄露
+
+    print(time.time() - t1)
+
+
+    
