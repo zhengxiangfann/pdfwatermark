@@ -7,7 +7,7 @@ from Cython.Build import cythonize
 # 这里我们不能在 sources 里面写上 ["fib.pyx", "libfib.a"]，这是不合法的，因为 sources 里面需要放入源文件
 # 静态库和动态库需要通过 library_dirs 和 libraries 指定
 ext = Extension(name="wrapper_watermark",
-                sources=["libwatermark.a"],
+                sources=["watermark.pyx"],
                 # 相当于 gcc 的 -L 参数，路径可以指定多个
                 library_dirs=["."],
                 # 相当于 gcc 的 -l 参数，链接的库可以指定多个
