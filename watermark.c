@@ -12,12 +12,20 @@
         "library_dirs": [
             "."
         ],
+<<<<<<< HEAD
         "name": "wrapper_watermark",
+=======
+        "name": "watermark",
+>>>>>>> 78f1458 (test)
         "sources": [
             "watermark.pyx"
         ]
     },
+<<<<<<< HEAD
     "module_name": "wrapper_watermark"
+=======
+    "module_name": "watermark"
+>>>>>>> 78f1458 (test)
 }
 END: Cython Metadata */
 
@@ -700,8 +708,13 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
+<<<<<<< HEAD
 #define __PYX_HAVE__wrapper_watermark
 #define __PYX_HAVE_API__wrapper_watermark
+=======
+#define __PYX_HAVE__watermark
+#define __PYX_HAVE_API__watermark
+>>>>>>> 78f1458 (test)
 /* Early includes */
 #include "go_watermark.h"
 #ifdef _OPENMP
@@ -1123,6 +1136,7 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
+<<<<<<< HEAD
 /* Module declarations from 'wrapper_watermark' */
 #define __Pyx_MODULE_NAME "wrapper_watermark"
 extern int __pyx_module_is_main_wrapper_watermark;
@@ -1130,10 +1144,20 @@ int __pyx_module_is_main_wrapper_watermark = 0;
 
 /* Implementation of 'wrapper_watermark' */
 static const char __pyx_k_f[] = "f";
+=======
+/* Module declarations from 'watermark' */
+#define __Pyx_MODULE_NAME "watermark"
+extern int __pyx_module_is_main_watermark;
+int __pyx_module_is_main_watermark = 0;
+
+/* Implementation of 'watermark' */
+static const char __pyx_k_file[] = "file";
+>>>>>>> 78f1458 (test)
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
+<<<<<<< HEAD
 static const char __pyx_k_watermark_pyx[] = "watermark.pyx";
 static const char __pyx_k_add_water_mark[] = "add_water_mark";
 static const char __pyx_k_release_memory[] = "release_memory";
@@ -1142,33 +1166,65 @@ static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static PyObject *__pyx_n_s_add_water_mark;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_f;
+=======
+static const char __pyx_k_watermark[] = "watermark";
+static const char __pyx_k_watermark_pyx[] = "watermark.pyx";
+static const char __pyx_k_add_water_mark[] = "add_water_mark";
+static const char __pyx_k_release_memory[] = "release_memory";
+static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static PyObject *__pyx_n_s_add_water_mark;
+static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_file;
+>>>>>>> 78f1458 (test)
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_release_memory;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_text;
+<<<<<<< HEAD
 static PyObject *__pyx_kp_s_watermark_pyx;
 static PyObject *__pyx_n_s_wrapper_watermark;
 static PyObject *__pyx_pf_17wrapper_watermark_add_water_mark(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_f, PyObject *__pyx_v_text); /* proto */
 static PyObject *__pyx_pf_17wrapper_watermark_2release_memory(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+=======
+static PyObject *__pyx_n_s_watermark;
+static PyObject *__pyx_kp_s_watermark_pyx;
+static PyObject *__pyx_pf_9watermark_add_water_mark(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_file, PyObject *__pyx_v_text); /* proto */
+static PyObject *__pyx_pf_9watermark_2release_memory(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+>>>>>>> 78f1458 (test)
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_codeobj__2;
 static PyObject *__pyx_codeobj__3;
 /* Late includes */
 
+<<<<<<< HEAD
 /* "watermark.pyx":6
  * 
  * 
  * def add_water_mark(f, text):             # <<<<<<<<<<<<<<
  *     return AddWaterMark(f, text)
+=======
+/* "watermark.pyx":8
+ *     void ReleaseMemory()
+ * 
+ * def add_water_mark(file, text):             # <<<<<<<<<<<<<<
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  */
 
 /* Python wrapper */
+<<<<<<< HEAD
 static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_17wrapper_watermark_1add_water_mark = {"add_water_mark", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_17wrapper_watermark_1add_water_mark, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_f = 0;
+=======
+static PyObject *__pyx_pw_9watermark_1add_water_mark(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_9watermark_1add_water_mark = {"add_water_mark", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9watermark_1add_water_mark, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9watermark_1add_water_mark(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_file = 0;
+>>>>>>> 78f1458 (test)
   PyObject *__pyx_v_text = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -1177,7 +1233,11 @@ static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_se
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_water_mark (wrapper)", 0);
   {
+<<<<<<< HEAD
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_f,&__pyx_n_s_text,0};
+=======
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_file,&__pyx_n_s_text,0};
+>>>>>>> 78f1458 (test)
     PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -1193,17 +1253,29 @@ static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_se
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
+<<<<<<< HEAD
         if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_f)) != 0)) kw_args--;
+=======
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_file)) != 0)) kw_args--;
+>>>>>>> 78f1458 (test)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_text)) != 0)) kw_args--;
         else {
+<<<<<<< HEAD
           __Pyx_RaiseArgtupleInvalid("add_water_mark", 1, 2, 2, 1); __PYX_ERR(0, 6, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "add_water_mark") < 0)) __PYX_ERR(0, 6, __pyx_L3_error)
+=======
+          __Pyx_RaiseArgtupleInvalid("add_water_mark", 1, 2, 2, 1); __PYX_ERR(0, 8, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "add_water_mark") < 0)) __PYX_ERR(0, 8, __pyx_L3_error)
+>>>>>>> 78f1458 (test)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1211,11 +1283,16 @@ static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_se
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
+<<<<<<< HEAD
     __pyx_v_f = values[0];
+=======
+    __pyx_v_file = values[0];
+>>>>>>> 78f1458 (test)
     __pyx_v_text = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
+<<<<<<< HEAD
   __Pyx_RaiseArgtupleInvalid("add_water_mark", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("wrapper_watermark.add_water_mark", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -1223,13 +1300,26 @@ static PyObject *__pyx_pw_17wrapper_watermark_1add_water_mark(PyObject *__pyx_se
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_17wrapper_watermark_add_water_mark(__pyx_self, __pyx_v_f, __pyx_v_text);
+=======
+  __Pyx_RaiseArgtupleInvalid("add_water_mark", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 8, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("watermark.add_water_mark", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_9watermark_add_water_mark(__pyx_self, __pyx_v_file, __pyx_v_text);
+>>>>>>> 78f1458 (test)
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
+<<<<<<< HEAD
 static PyObject *__pyx_pf_17wrapper_watermark_add_water_mark(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_f, PyObject *__pyx_v_text) {
+=======
+static PyObject *__pyx_pf_9watermark_add_water_mark(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_file, PyObject *__pyx_v_text) {
+>>>>>>> 78f1458 (test)
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   char *__pyx_t_1;
@@ -1240,34 +1330,59 @@ static PyObject *__pyx_pf_17wrapper_watermark_add_water_mark(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_water_mark", 0);
 
+<<<<<<< HEAD
   /* "watermark.pyx":7
  * 
  * def add_water_mark(f, text):
  *     return AddWaterMark(f, text)             # <<<<<<<<<<<<<<
+=======
+  /* "watermark.pyx":9
+ * 
+ * def add_water_mark(file, text):
+ *     return AddWaterMark(file, text)             # <<<<<<<<<<<<<<
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():
  */
   __Pyx_XDECREF(__pyx_r);
+<<<<<<< HEAD
   __pyx_t_1 = __Pyx_PyObject_AsWritableString(__pyx_v_f); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L1_error)
   __pyx_t_2 = __Pyx_PyObject_AsWritableString(__pyx_v_text); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyBytes_FromString(AddWaterMark(__pyx_t_1, __pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
+=======
+  __pyx_t_1 = __Pyx_PyObject_AsWritableString(__pyx_v_file); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_AsWritableString(__pyx_v_text); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_FromString(AddWaterMark(__pyx_t_1, __pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
+>>>>>>> 78f1458 (test)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
+<<<<<<< HEAD
   /* "watermark.pyx":6
  * 
  * 
  * def add_water_mark(f, text):             # <<<<<<<<<<<<<<
  *     return AddWaterMark(f, text)
+=======
+  /* "watermark.pyx":8
+ *     void ReleaseMemory()
+ * 
+ * def add_water_mark(file, text):             # <<<<<<<<<<<<<<
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
+<<<<<<< HEAD
   __Pyx_AddTraceback("wrapper_watermark.add_water_mark", __pyx_clineno, __pyx_lineno, __pyx_filename);
+=======
+  __Pyx_AddTraceback("watermark.add_water_mark", __pyx_clineno, __pyx_lineno, __pyx_filename);
+>>>>>>> 78f1458 (test)
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1275,14 +1390,20 @@ static PyObject *__pyx_pf_17wrapper_watermark_add_water_mark(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
+<<<<<<< HEAD
 /* "watermark.pyx":9
  *     return AddWaterMark(f, text)
+=======
+/* "watermark.pyx":11
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():             # <<<<<<<<<<<<<<
  *     ReleaseMemory()
  */
 
 /* Python wrapper */
+<<<<<<< HEAD
 static PyObject *__pyx_pw_17wrapper_watermark_3release_memory(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static PyMethodDef __pyx_mdef_17wrapper_watermark_3release_memory = {"release_memory", (PyCFunction)__pyx_pw_17wrapper_watermark_3release_memory, METH_NOARGS, 0};
 static PyObject *__pyx_pw_17wrapper_watermark_3release_memory(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
@@ -1290,26 +1411,48 @@ static PyObject *__pyx_pw_17wrapper_watermark_3release_memory(PyObject *__pyx_se
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("release_memory (wrapper)", 0);
   __pyx_r = __pyx_pf_17wrapper_watermark_2release_memory(__pyx_self);
+=======
+static PyObject *__pyx_pw_9watermark_3release_memory(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9watermark_3release_memory = {"release_memory", (PyCFunction)__pyx_pw_9watermark_3release_memory, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9watermark_3release_memory(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("release_memory (wrapper)", 0);
+  __pyx_r = __pyx_pf_9watermark_2release_memory(__pyx_self);
+>>>>>>> 78f1458 (test)
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
+<<<<<<< HEAD
 static PyObject *__pyx_pf_17wrapper_watermark_2release_memory(CYTHON_UNUSED PyObject *__pyx_self) {
+=======
+static PyObject *__pyx_pf_9watermark_2release_memory(CYTHON_UNUSED PyObject *__pyx_self) {
+>>>>>>> 78f1458 (test)
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("release_memory", 0);
 
+<<<<<<< HEAD
   /* "watermark.pyx":10
+=======
+  /* "watermark.pyx":12
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():
  *     ReleaseMemory()             # <<<<<<<<<<<<<<
  */
   ReleaseMemory();
 
+<<<<<<< HEAD
   /* "watermark.pyx":9
  *     return AddWaterMark(f, text)
+=======
+  /* "watermark.pyx":11
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():             # <<<<<<<<<<<<<<
  *     ReleaseMemory()
@@ -1329,17 +1472,28 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
+<<<<<<< HEAD
 static int __pyx_pymod_exec_wrapper_watermark(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
   {Py_mod_exec, (void*)__pyx_pymod_exec_wrapper_watermark},
+=======
+static int __pyx_pymod_exec_watermark(PyObject* module); /*proto*/
+static PyModuleDef_Slot __pyx_moduledef_slots[] = {
+  {Py_mod_create, (void*)__pyx_pymod_create},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_watermark},
+>>>>>>> 78f1458 (test)
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
+<<<<<<< HEAD
     "wrapper_watermark",
+=======
+    "watermark",
+>>>>>>> 78f1458 (test)
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -1370,14 +1524,23 @@ static struct PyModuleDef __pyx_moduledef = {
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_add_water_mark, __pyx_k_add_water_mark, sizeof(__pyx_k_add_water_mark), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+<<<<<<< HEAD
   {&__pyx_n_s_f, __pyx_k_f, sizeof(__pyx_k_f), 0, 0, 1, 1},
+=======
+  {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
+>>>>>>> 78f1458 (test)
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_release_memory, __pyx_k_release_memory, sizeof(__pyx_k_release_memory), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
+<<<<<<< HEAD
   {&__pyx_kp_s_watermark_pyx, __pyx_k_watermark_pyx, sizeof(__pyx_k_watermark_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_wrapper_watermark, __pyx_k_wrapper_watermark, sizeof(__pyx_k_wrapper_watermark), 0, 0, 1, 1},
+=======
+  {&__pyx_n_s_watermark, __pyx_k_watermark, sizeof(__pyx_k_watermark), 0, 0, 1, 1},
+  {&__pyx_kp_s_watermark_pyx, __pyx_k_watermark_pyx, sizeof(__pyx_k_watermark_pyx), 0, 0, 1, 0},
+>>>>>>> 78f1458 (test)
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
@@ -1388,6 +1551,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
+<<<<<<< HEAD
   /* "watermark.pyx":6
  * 
  * 
@@ -1402,11 +1566,31 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "watermark.pyx":9
  *     return AddWaterMark(f, text)
+=======
+  /* "watermark.pyx":8
+ *     void ReleaseMemory()
+ * 
+ * def add_water_mark(file, text):             # <<<<<<<<<<<<<<
+ *     return AddWaterMark(file, text)
+ * 
+ */
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_s_file, __pyx_n_s_text); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_watermark_pyx, __pyx_n_s_add_water_mark, 8, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 8, __pyx_L1_error)
+
+  /* "watermark.pyx":11
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():             # <<<<<<<<<<<<<<
  *     ReleaseMemory()
  */
+<<<<<<< HEAD
   __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_watermark_pyx, __pyx_n_s_release_memory, 9, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 9, __pyx_L1_error)
+=======
+  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_watermark_pyx, __pyx_n_s_release_memory, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 11, __pyx_L1_error)
+>>>>>>> 78f1458 (test)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1504,11 +1688,19 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
+<<<<<<< HEAD
 __Pyx_PyMODINIT_FUNC initwrapper_watermark(void) CYTHON_SMALL_CODE; /*proto*/
 __Pyx_PyMODINIT_FUNC initwrapper_watermark(void)
 #else
 __Pyx_PyMODINIT_FUNC PyInit_wrapper_watermark(void) CYTHON_SMALL_CODE; /*proto*/
 __Pyx_PyMODINIT_FUNC PyInit_wrapper_watermark(void)
+=======
+__Pyx_PyMODINIT_FUNC initwatermark(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initwatermark(void)
+#else
+__Pyx_PyMODINIT_FUNC PyInit_watermark(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_watermark(void)
+>>>>>>> 78f1458 (test)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -1575,7 +1767,11 @@ bad:
 }
 
 
+<<<<<<< HEAD
 static CYTHON_SMALL_CODE int __pyx_pymod_exec_wrapper_watermark(PyObject *__pyx_pyinit_module)
+=======
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_watermark(PyObject *__pyx_pyinit_module)
+>>>>>>> 78f1458 (test)
 #endif
 #endif
 {
@@ -1587,7 +1783,11 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_wrapper_watermark(PyObject *__pyx_
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
+<<<<<<< HEAD
     PyErr_SetString(PyExc_RuntimeError, "Module 'wrapper_watermark' has already been imported. Re-initialisation is not supported.");
+=======
+    PyErr_SetString(PyExc_RuntimeError, "Module 'watermark' has already been imported. Re-initialisation is not supported.");
+>>>>>>> 78f1458 (test)
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -1602,7 +1802,11 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
+<<<<<<< HEAD
   __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_wrapper_watermark(void)", 0);
+=======
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_watermark(void)", 0);
+>>>>>>> 78f1458 (test)
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -1639,7 +1843,11 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
+<<<<<<< HEAD
   __pyx_m = Py_InitModule4("wrapper_watermark", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+=======
+  __pyx_m = Py_InitModule4("watermark", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+>>>>>>> 78f1458 (test)
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -1657,14 +1865,23 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
+<<<<<<< HEAD
   if (__pyx_module_is_main_wrapper_watermark) {
+=======
+  if (__pyx_module_is_main_watermark) {
+>>>>>>> 78f1458 (test)
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
+<<<<<<< HEAD
     if (!PyDict_GetItemString(modules, "wrapper_watermark")) {
       if (unlikely(PyDict_SetItemString(modules, "wrapper_watermark", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+=======
+    if (!PyDict_GetItemString(modules, "watermark")) {
+      if (unlikely(PyDict_SetItemString(modules, "watermark", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+>>>>>>> 78f1458 (test)
     }
   }
   #endif
@@ -1685,6 +1902,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
+<<<<<<< HEAD
   /* "watermark.pyx":6
  * 
  * 
@@ -1699,10 +1917,27 @@ if (!__Pyx_RefNanny) {
 
   /* "watermark.pyx":9
  *     return AddWaterMark(f, text)
+=======
+  /* "watermark.pyx":8
+ *     void ReleaseMemory()
+ * 
+ * def add_water_mark(file, text):             # <<<<<<<<<<<<<<
+ *     return AddWaterMark(file, text)
+ * 
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9watermark_1add_water_mark, NULL, __pyx_n_s_watermark); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_add_water_mark, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "watermark.pyx":11
+ *     return AddWaterMark(file, text)
+>>>>>>> 78f1458 (test)
  * 
  * def release_memory():             # <<<<<<<<<<<<<<
  *     ReleaseMemory()
  */
+<<<<<<< HEAD
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_17wrapper_watermark_3release_memory, NULL, __pyx_n_s_wrapper_watermark); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_release_memory, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -1712,6 +1947,17 @@ if (!__Pyx_RefNanny) {
  * cdef extern from "go_watermark.h":             # <<<<<<<<<<<<<<
  *     char* AddWaterMark(char*, char*)
  *     void ReleaseMemory()
+=======
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9watermark_3release_memory, NULL, __pyx_n_s_watermark); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_release_memory, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "watermark.pyx":1
+ * # -*- coding:utf-8 -*-             # <<<<<<<<<<<<<<
+ * # CreateDate: 2022/5/9 15:27
+ * 
+>>>>>>> 78f1458 (test)
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1725,11 +1971,19 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
+<<<<<<< HEAD
       __Pyx_AddTraceback("init wrapper_watermark", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
     PyErr_SetString(PyExc_ImportError, "init wrapper_watermark");
+=======
+      __Pyx_AddTraceback("init watermark", __pyx_clineno, __pyx_lineno, __pyx_filename);
+    }
+    Py_CLEAR(__pyx_m);
+  } else if (!PyErr_Occurred()) {
+    PyErr_SetString(PyExc_ImportError, "init watermark");
+>>>>>>> 78f1458 (test)
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
