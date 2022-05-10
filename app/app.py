@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.DEBUG)
 import gunicorn.app.base
 from flask import Flask
 import orjson
-import watermark
+import watermark as wm
 
 app = Flask(__name__)
 
@@ -27,9 +27,8 @@ class StandaloneApplication(gunicorn.app.base.BaseApplication):
 
 @app.route('/add_water_mark', methods=['GET', 'POST'])
 def route_api():
-
-    water_file = watermark.add_water_mask("../abc.pdf", "随意 水印 水印 索引")
-    watermark
+    water_file = wm.add_water_mask("../abc.pdf", "随意 水印 水印 索引")
+    wm.release_memory()
     with open("out-water.pdf", "wb") as fw:
         fw.write(water_file)
     return orjson.dumps({"code":0, "msg":"ok"})

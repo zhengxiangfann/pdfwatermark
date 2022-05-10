@@ -55,7 +55,7 @@ func calcText(text string, w, h float64) string {
 //export AddWaterMark
 func AddWaterMark(in *C.char, text *C.char) *C.char {
 	goIn := string(C.GoString(in))
-	// goText := string(C.GoString(text))
+	goText := string(C.GoString(text))
 	f, err := os.Open(goIn)
 	if err != nil {
 		log.Fatalln(err)
@@ -88,42 +88,37 @@ func AddWaterMark(in *C.char, text *C.char) *C.char {
 		log.Fatalln("api.InstallFonts error:", err.Error())
 	}
 
-	//pagesSize, err := api.PageDims(f, config)
-	//if err != nil {
-	//	log.Fatalln("api.PageDims  error", err.Error())
-	//}
-
-	//var pdfSize0 pdfcpu.Dim
-	//if len(pagesSize) > 0 {
-	//	pdfSize0 = pagesSize[0]
-	//}
-
-	//wm, err := api.TextWatermark("",
-	//	"sc: 1.4 abs, op:.2, rot:30, pos:br, fillc: 0.5 0.5 0.5",
-	//	true, false, 4,
-	//)
-
-	//if err != nil {
-	//	log.Fatalln("api.TextWatermark error:", err.Error())
-	//}
-
-	//wm.FontName = "MicrosoftYaHei"
-	//wm.FontSize = 8
-	//wm.TextString = calcText(goText, pdfSize0.Width, pdfSize0.Height)
-	//	buf := new(bytes.Buffer)
-	//	err = api.AddWatermarks(f, buf, nil, wm, config)
-	//	defer func() { recover() }()
-	//	if err != nil {
-	//		fmt.Println(err)
-	//	}
-	//
-
-	fd, err := ioutil.ReadAll(f)
+	pagesSize, err := api.PageDims(f, config)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Fatalln("api.PageDims  error", err.Error())
 	}
 
-	result := C.CString(base64.StdEncoding.EncodeToString(fd))
+	var pdfSize0 pdfcpu.Dim
+	if len(pagesSize) > 0 {
+		pdfSize0 = pagesSize[0]
+	}
+
+	wm, err := api.TextWatermark("",
+		"sc: 1.4 abs, op:.2, rot:30, pos:br, fillc: 0.5 0.5 0.5",
+		true, false, 4,
+	)
+
+	if err != nil {
+		log.Fatalln("api.TextWatermark error:", err.Error())
+	}
+
+	wm.FontName = "MicrosoftYaHei"
+	wm.FontSize = 8
+
+
+	wm.TextString = calcText(goText, pdfSize0.Width, pdfSize0.Height)
+		buf := new(bytes.Buffer)
+		err = api.AddWatermarks(f, buf, nil, wm, config)
+		defer func() { recover() }()
+		if err != nil {
+			fmt.Println(err)
+		}
+	result := C.CString(base64.StdEncoding.EncodeToString( buf.Bytes()))
 	Ret = unsafe.Pointer(result) // 定义一个全局变量，来保存 堆内存的地址,释放内存的时候会用到
 	return result
 }
