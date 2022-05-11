@@ -1,5 +1,5 @@
 
-cdef extern from "go_watermark.h":
+cdef extern from "libwatermark.h":
     char* AddWaterMark(char*, char*)
     void ReleaseMemory()
 
