@@ -2,7 +2,9 @@
 .idea/*
 .idea/
 *.so
-*.pdf
-
+build/
+*.a
+*.h
+*.c
 /__pycache__/
 *.pyc

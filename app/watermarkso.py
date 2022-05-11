@@ -37,14 +37,14 @@ class WaterMark(object):
         AddWaterMark = self.so.AddWaterMark
         AddWaterMark.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
         AddWaterMark.restype = ctypes.c_char_p
-        return base64.b64decode(AddWaterMark(
+        with_watermark_file =  base64.b64decode(AddWaterMark(
             self._to_byte(self.pdf_path),
             self._to_byte(self.watermark_text)
         ))
+        self.so.ReleaseMemory()
+        return with_watermark_file
 
-    def free(self):
-        free = self.so.ReleaseMemory
-        free()
+
 
 WaterMark.register_dynamic_link_library()
 

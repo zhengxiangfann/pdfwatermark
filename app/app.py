@@ -1,13 +1,18 @@
 # -*- coding:utf-8 -*-
-# CreateDate: 2022/5/9 11:37
 import logging
+
+import orjson.orjson
+import time
 logging.basicConfig(level=logging.DEBUG)
 import gunicorn.app.base
-from flask import Flask
-import orjson
-import watermark as wm
+from flask import Flask, send_file
+# import orjson
+from io import BytesIO
+# import watermark as wm
+from watermarkso import WaterMark
 
 app = Flask(__name__)
+
 
 class StandaloneApplication(gunicorn.app.base.BaseApplication):
     def __init__(self, app, options=None):
@@ -25,21 +30,41 @@ class StandaloneApplication(gunicorn.app.base.BaseApplication):
         return self.application
 
 
+@app.route("/")
+def index():
+    return orjson.dumps({"code": 0, "msg": "ok", "data": {}})
+
+
 @app.route('/add_water_mark', methods=['GET', 'POST'])
 def route_api():
-    water_file = wm.add_water_mask("../abc.pdf", "随意 水印 水印 索引")
-    wm.release_memory()
-    with open("out-water.pdf", "wb") as fw:
-        fw.write(water_file)
-    return orjson.dumps({"code":0, "msg":"ok"})
-    
+
+    params_file_path = "../libwatermark/abc.pdf"
+    params_content = "斗破苍穹 水印 水印 斗罗大陆"
+
+    ts = time.time()
+    with_watermark_file = WaterMark().add_water_mask(params_file_path, params_content)
+
+    print("文件加水印耗时:", time.time() - ts)
+
+    filename = "water_mark-abc.pdf"
+    response = send_file(
+        BytesIO(with_watermark_file),
+        as_attachment=False,
+        attachment_filename=filename,
+        cache_timeout=1
+    )
+    response.headers['Content-Disposition'] += "inline; filename*=utf-8''{}".format(filename)
+    response.headers['Content-Type'] = "application/pdf"
+    return response
+
+
 if __name__ == '__main__':
-    # app.run(host="127.0.0.1",port=5000,debug=True)
-    StandaloneApplication(app, {
-        'bind': "127.0.0.1:5000",
-        'workers': 1,
-        'worker_class':'sync',
-        'timeout': 60,
-        'loglevel': 'info',
-        'logger_class': 'simple'
-    }).run()
+    app.run(host="127.0.0.1", port=5000, debug=True)
+    # StandaloneApplication(app, {
+    #     'bind': "127.0.0.1:5000",
+    #     'workers': 1,
+    #     'worker_class':'sync',
+    #     'timeout': 60,
+    #     'loglevel': 'info',
+    #     'logger_class': 'simple'
+    # }).run()
