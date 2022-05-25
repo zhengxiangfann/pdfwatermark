@@ -10,7 +10,8 @@ import gunicorn.app.base
 from flask import Flask, send_file
 # import orjson
 from io import BytesIO
-import wrapper_watermark as wm1
+
+import wrapper_watermark as wm2
 
 # from watermarkso import WaterMark
 # import gevent.monkey
@@ -49,8 +50,9 @@ def route_api():
 
     ts = time.time()
     # with_watermark_file = WaterMark().add_water_mask(params_file_path, params_content)
-    with_watermark_file = wm1.add_water_mark(params_file_path, params_content)
-    wm1.release_memory()
+
+    with_watermark_file = wm2.add_water_mark(params_file_path, params_content)
+    wm2.release_memory()
 
     print("文件加水印耗时:", time.time() - ts)
     print('watermark_file', len(with_watermark_file))
