@@ -17,6 +17,8 @@ import wrapper_watermark as wm
 # gevent.monkey.patch_all()
 
 app = Flask(__name__)
+#app alyun
+
 
 
 class StandaloneApplication(gunicorn.app.base.BaseApplication):
